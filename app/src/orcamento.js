@@ -12,6 +12,9 @@ export function calcularOrcamento(precoCentavos, quantidade, desconto = 0) {
   if (!Number.isSafeInteger(subtotalCentavos)) {
     throw new Error('Subtotal excede o limite suportado.');
   }
-  const totalCentavos = subtotalCentavos - desconto;
+  const fator = 100 - desconto;
+  const parteInteira = Math.floor(subtotalCentavos / 100);
+  const resto = subtotalCentavos % 100;
+  const totalCentavos = parteInteira * fator + Math.floor((resto * fator + 50) / 100);
   return { subtotalCentavos, totalCentavos };
 }
