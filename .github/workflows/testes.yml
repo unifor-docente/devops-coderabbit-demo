@@ -1,0 +1,26 @@
+name: Testes da prática CodeRabbit
+on:
+  push:
+    paths:
+      - 'app/**'
+      - 'demo/**'
+      - '.github/workflows/testes.yml'
+  pull_request:
+    paths:
+      - 'app/**'
+      - 'demo/**'
+      - '.github/workflows/testes.yml'
+permissions:
+  contents: read
+jobs:
+  testes:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: app
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+      - run: npm test

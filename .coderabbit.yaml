@@ -1,0 +1,16 @@
+# yaml-language-server: $schema=https://coderabbit.ai/integrations/schema.v2.json
+language: pt-BR
+reviews:
+  profile: assertive
+  high_level_summary: true
+  poem: false
+  auto_review:
+    enabled: true
+    drafts: false
+  path_instructions:
+    - path: "app/**/*.js"
+      instructions: >-
+        Revise em português com foco em correção, validação de entrada e testes.
+        Leia as regras de negócio do README da prática. Explique o impacto de
+        cada problema e sugira uma entrada concreta para reproduzi-lo.
+        Priorize problemas funcionais sobre preferências de estilo.

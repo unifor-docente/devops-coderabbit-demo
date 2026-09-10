@@ -1,0 +1,13 @@
+{
+  "name": "pratica-coderabbit-orcamento",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=24" },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test",
+    "demo:bug": "node ../demo/preparar.js bug",
+    "demo:fix": "node ../demo/preparar.js fix"
+  }
+}
