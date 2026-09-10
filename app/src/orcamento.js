@@ -1,4 +1,7 @@
 export function calcularOrcamento(precoCentavos, quantidade, desconto = 0) {
+  if (!Number.isInteger(desconto) || desconto < 0 || desconto > 100) {
+    throw new Error('Desconto deve ser um inteiro entre 0 e 100.');
+  }
   if (!Number.isSafeInteger(precoCentavos) || precoCentavos < 0) {
     throw new Error('Preço deve ser um inteiro não negativo em centavos.');
   }
